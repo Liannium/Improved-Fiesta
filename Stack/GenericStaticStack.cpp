@@ -1,6 +1,7 @@
-//and this children is a driver
+#include "Stack.h"
 
 int main ()
 {
+  Stack <int>Fiesta ();
   return 0;
 }

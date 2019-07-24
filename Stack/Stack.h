@@ -13,7 +13,7 @@ class Stack
     void push (T* buffer, int size);
     T* pop (T* buffer, int size);
     T* peek (T* buffer, int size);
-    int size ();
+    int getSize ();
 
   private:
     T* data[MAX_ELEMENTS];
