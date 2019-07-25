@@ -24,6 +24,14 @@ bool Stack<T>::isEmpty ()
 }
 
 template<typename T>
+void Stack<T>::push (T* buffer, int size)
+{
+  new T* = buffer;
+  data[size] = buffer;
+  size++;
+}
+
+template<typename T>
 int Stack<T>::getSize ()
 {
   return size;
