@@ -8,16 +8,53 @@ class Stack
     static const int MAX_ELEMENTS = 100;
     static const int EMPTY = 0;
 
-    Stack ();
-    ~Stack ();
-    bool isFull ();
-    bool isEmpty ();
-    void push (T* buffer);
-    T* pop (T* buffer);
-    T* peek (T* buffer);
-    int getSize ();
+    bool isFull ()
+	{
+		if (size == MAX_ELEMENTS)
+			return true;
+
+		return false;
+	};
+    bool isEmpty ()
+	{
+		if (size == EMPTY)
+			return true;
+		return false;
+	};
+    void push (T* buffer)
+	{
+		if (isFull())
+		{
+			std::cout << "The stack is full \n";
+			return;
+		}
+		T* temp = new T;
+		*temp = *buffer;
+		data[size] = temp;
+		size++;
+	};
+    T* pop (T* buffer)
+	{
+		if (isEmpty())
+		{
+			std::cout << "The stack is empty \n";
+			return nullptr;
+		}
+		T* temp = new T;
+		*temp = *data[size];
+		buffer = temp;
+		size--;
+		return buffer;
+	}
+	;
+    // T* peek (T* buffer);
+    int getSize ()
+	{
+		return size;
+	}
+	;
 
   private:
     T* data[MAX_ELEMENTS];
-    int size;
+    int size = EMPTY;
 };
