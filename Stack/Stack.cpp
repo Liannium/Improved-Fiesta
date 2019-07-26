@@ -24,11 +24,32 @@ bool Stack<T>::isEmpty ()
 }
 
 template<typename T>
-void Stack<T>::push (T* buffer, int size)
+void Stack<T>::push (T* buffer)
 {
-  new T* = buffer;
-  data[size] = buffer;
+  if (isFull ())
+  {
+    std::cout << "The stack is full \n";
+    return;
+  }
+  T* temp = new T;
+  *temp = *buffer;
+  data[size] = temp;
   size++;
+}
+
+template<typename T>
+T* Stack<T>::pop (T* buffer)
+{
+  if (isEmpty ())
+  {
+    std::cout << "The stack is empty \n";
+    return;
+  }
+  T* temp = new T;
+  *temp = data[size];
+  buffer = temp;
+  size--;
+  return buffer;
 }
 
 template<typename T>

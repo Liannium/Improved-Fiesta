@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 template <typename T>
 class Stack
 {
@@ -10,9 +12,9 @@ class Stack
     ~Stack ();
     bool isFull ();
     bool isEmpty ();
-    void push (T* buffer, int size);
-    T* pop (T* buffer, int size);
-    T* peek (T* buffer, int size);
+    void push (T* buffer);
+    T* pop (T* buffer);
+    T* peek (T* buffer);
     int getSize ();
 
   private:
