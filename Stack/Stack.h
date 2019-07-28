@@ -77,6 +77,7 @@ T Stack<T>::pop (T buffer)
   size--;
   buffer = *data[size];
   delete data[size];
+  data[size] = nullptr;
   return buffer;
 }
 
