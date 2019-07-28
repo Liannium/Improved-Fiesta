@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GenericDynamicStack.cpp" />
-    <ClCompile Include="Stack.cpp">
+    <ClCompile Include="DynamicStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -24,7 +24,7 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
+    <ClInclude Include="DynamicStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

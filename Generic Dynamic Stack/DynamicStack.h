@@ -1,8 +1,9 @@
 #pragma once
 #include "Node.h"
 
-template<typename T>
-class Stack {
+template <typename T>
+class DynamicStack
+{
   public:
     Stack ();
     ~Stack ();
