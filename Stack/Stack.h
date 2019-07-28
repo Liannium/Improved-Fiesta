@@ -9,12 +9,12 @@ class Stack
     static const int EMPTY = 0;
 
     Stack ();
-    //~Stack ();
+    ~Stack ();
     bool isFull ();
     bool isEmpty ();
     void push (T buffer);
     T pop (T buffer);
-    //T* peek (T* buffer);
+    T peek (T buffer);
     int getSize ();
 
   private:
@@ -25,6 +25,16 @@ class Stack
 template<typename T>
 Stack<T>::Stack ()
 {
+}
+
+template<typename T>
+Stack<T>::~Stack ()
+{
+  do {
+    T* temp = new T;
+    pop (*temp);
+    delete temp;
+  } while (!isEmpty ());
 }
 
 template<typename T>
@@ -62,14 +72,20 @@ template<typename T>
 T Stack<T>::pop (T buffer)
 {
   if (isEmpty ())
-  {
     throw "The stack is empty";
-  }
   T* temp = new T;
   size--;
-  temp = data[size];
-  buffer = *temp;
-  delete temp;
+  buffer = *data[size];
+  delete data[size];
+  return buffer;
+}
+
+template<typename T>
+T Stack<T>::peek (T buffer)
+{
+  if (isEmpty ())
+    throw "The stack is empty";
+  buffer = *data[size - 1];
   return buffer;
 }
 
