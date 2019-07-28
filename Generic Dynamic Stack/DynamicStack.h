@@ -16,10 +16,11 @@ class DynamicStack
       Node ();
       ~Node ();
 
-      T* data;
-      Node* next;
+      T* data = nullptr;
+      Node* next = nullptr;
     };
 
     Node* top;
     int size;
 };
+
