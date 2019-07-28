@@ -11,8 +11,8 @@ template<typename T>
 bool DynamicStack<T>::isEmpty ()
 {
   if (size == EMPTY)
-    return false;
-  return true;
+    return true;
+  return false;
 }
 
 template<typename T>
