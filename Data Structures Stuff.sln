@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack", "Stack\Stack.vcxproj", "{9347A65B-BD53-45C9-B103-E18C5C954DC0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Static Stack", "Stack\Stack.vcxproj", "{9347A65B-BD53-45C9-B103-E18C5C954DC0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Dynamic Stack", "Generic Dynamic Stack\Generic Dynamic Stack.vcxproj", "{F995DE6B-47F1-435A-9D75-F9705B8E402B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{9347A65B-BD53-45C9-B103-E18C5C954DC0}.Release|x64.Build.0 = Release|x64
 		{9347A65B-BD53-45C9-B103-E18C5C954DC0}.Release|x86.ActiveCfg = Release|Win32
 		{9347A65B-BD53-45C9-B103-E18C5C954DC0}.Release|x86.Build.0 = Release|Win32
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Debug|x64.ActiveCfg = Debug|x64
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Debug|x64.Build.0 = Debug|x64
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Debug|x86.ActiveCfg = Debug|Win32
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Debug|x86.Build.0 = Debug|Win32
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x64.ActiveCfg = Release|x64
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x64.Build.0 = Release|x64
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x86.ActiveCfg = Release|Win32
+		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
