@@ -1,10 +1,25 @@
 #include "DynamicStack.h"
 
 template<typename T>
+inline DynamicStack<T>::DynamicStack ()
+{
+  top = nullptr;
+  size = 0;
+}
+
+template<typename T>
+bool DynamicStack<T>::isEmpty ()
+{
+  if (size == EMPTY)
+    return false;
+  return true;
+}
+
+template<typename T>
 inline DynamicStack<T>::Node::~Node ()
 {
   delete data;
-  data = nullptr;
   delete next;
+  data = nullptr;
   next = nullptr;
 }
