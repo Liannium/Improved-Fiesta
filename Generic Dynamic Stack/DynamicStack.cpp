@@ -16,6 +16,12 @@ bool DynamicStack<T>::isEmpty ()
 }
 
 template<typename T>
+int DynamicStack<T>::getSize ()
+{
+  return size;
+}
+
+template<typename T>
 inline DynamicStack<T>::Node::~Node ()
 {
   delete data;
