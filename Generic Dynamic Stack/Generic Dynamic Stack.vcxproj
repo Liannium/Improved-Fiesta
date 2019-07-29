@@ -152,7 +152,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DynamicStack.cpp" />
     <ClCompile Include="GenericDynamicStack.cpp" />
   </ItemGroup>
   <ItemGroup>

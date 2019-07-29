@@ -47,6 +47,28 @@ void DynamicStack<T>::push (T buffer)
 {
   T* temp = new T;
   *temp = buffer;
+  if (top == nullptr)
+  {
+    top = new Node;
+  }
+  else
+  {
+    top->next = new Node;
+    top = top->next;
+  }
+  top->data = temp;
+  size++;
+}
+
+template<typename T>
+inline T DynamicStack<T>::pop (T buffer)
+{
+  if (isEmpty ())
+    throw "The stack is empty";
+
+  *top->data = buffer;
+  
+  return T ();
 }
 
 template<typename T>
