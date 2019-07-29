@@ -1,6 +1,6 @@
 #include "DynamicStack.h"
 
-template<typename T>
+/*template<typename T>
 inline DynamicStack<T>::DynamicStack ()
 {
   top = nullptr;
@@ -8,11 +8,18 @@ inline DynamicStack<T>::DynamicStack ()
 }
 
 template<typename T>
-bool DynamicStack<T>::isEmpty ()
+inline bool DynamicStack<T>::isEmpty ()
 {
   if (size == EMPTY)
     return true;
   return false;
+}
+
+template<typename T>
+void DynamicStack<T>::push (T buffer)
+{
+  T* temp = new T;
+  *temp = buffer;
 }
 
 template<typename T>
@@ -28,4 +35,4 @@ inline DynamicStack<T>::Node::~Node ()
   delete next;
   data = nullptr;
   next = nullptr;
-}
+}*/

@@ -13,12 +13,12 @@ class Stack
     bool isFull ();
     bool isEmpty ();
     void push (T buffer);
-    T pop (T buffer);
+    T pop (T &buffer);
     T peek (T buffer);
     int getSize ();
 
   private:
-    T* data[MAX_ELEMENTS];
+    T* data[MAX_ELEMENTS] = { nullptr };
     int size = EMPTY;
 };
 
@@ -69,7 +69,7 @@ void Stack<T>::push (T buffer)
 }
 
 template<typename T>
-T Stack<T>::pop (T buffer)
+T Stack<T>::pop (T &buffer)
 {
   if (isEmpty ())
     throw "The stack is empty";

@@ -2,6 +2,6 @@
 
 int main()
 {
-  DynamicStack<int> dynamicFiesta ();
+  DynamicStack<int> dynamicFiesta;
   return 0;
 }
