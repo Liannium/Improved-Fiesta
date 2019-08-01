@@ -157,6 +157,9 @@
   <ItemGroup>
     <ClInclude Include="DynamicStack.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="palindromes.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
