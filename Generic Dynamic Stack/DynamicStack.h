@@ -89,6 +89,13 @@ T DynamicStack<T>::pop (T &buffer)
 }
 
 template<typename T>
+inline T DynamicStack<T>::peek (T& buffer)
+{
+  buffer = *top->data;
+  return buffer;
+}
+
+template<typename T>
 int DynamicStack<T>::getSize ()
 {
   return size;
