@@ -3,13 +3,13 @@
 int main()
 {
   DynamicStack<int> dynamicFiesta;
-  int pushtest = 5;
-  int poptest{};
-  int poptest2{};
+  int pushTest = 5;
+  int popTest{};
+  int popTest2{};
 
-  dynamicFiesta.push (pushtest);
+  dynamicFiesta.push (pushTest);
   dynamicFiesta.push (42);
-  dynamicFiesta.pop (poptest);
-  dynamicFiesta.pop (poptest2);
+  dynamicFiesta.pop (popTest);
+  dynamicFiesta.pop (popTest2);
   return 0;
 }

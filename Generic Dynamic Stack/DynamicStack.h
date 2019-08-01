@@ -10,8 +10,8 @@ class DynamicStack
     //~DynamicStack ();
     bool isEmpty ();
     void push (T buffer);
-    T pop (T buffer);
-    T peek (T buffer);
+    T pop (T &buffer);
+    T peek (T &buffer);
     int getSize ();
     class Node {
       public:
@@ -45,59 +45,47 @@ bool DynamicStack<T>::isEmpty ()
 template<typename T>
 void DynamicStack<T>::push (T buffer)
 {
-  T* temp = new T;
-  *temp = buffer;
-  if (top == nullptr)
+  if (size == 0)
   {
     top = new Node;
-    top->data = temp;
+    top->data = new T;
+    *top->data = buffer;
   }
   else
   {
-    Node* node = top;
-    while (node->next)
-      node = node->next;
-    node->next = new Node;
-    node = node->next;
-    node->data = temp;
+    Node* node = new Node;
+    node->data = new T;
+    *node->data = buffer;
+    node->next = top;
+    top = node;
   }
   size++;
 }
 
 template<typename T>
-inline T DynamicStack<T>::pop (T buffer)
+T DynamicStack<T>::pop (T &buffer)
 {
   if (isEmpty ())
     throw "The stack is empty";
 
-  Node* node = top;
   if (size == 1)
   {
     buffer = *top->data;
-    delete top->data;
-    top->data = nullptr;
     delete top;
     top = nullptr;
   }
   else
   {
     Node* node = top;
-    while (node->next->next)
-      node = node->next;
-    buffer = *node->next->data;
-    delete node->next->data;
-    node->next->data = nullptr;
-    delete node->next;
-    node->next = nullptr;
+    top = top->next;
+    buffer = *node->data;
+    delete node->data;
+    node->data = nullptr;
+    delete node;
+    node = nullptr;
   }
   size--;
   return buffer;
-}
-
-template<typename T>
-T DynamicStack<T>::peek (T buffer)
-{
-
 }
 
 template<typename T>
@@ -115,7 +103,5 @@ template<typename T>
 inline DynamicStack<T>::Node::~Node ()
 {
   delete data;
-  delete next;
   data = nullptr;
-  next = nullptr;
 }
