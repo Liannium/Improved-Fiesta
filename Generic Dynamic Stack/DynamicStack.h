@@ -14,11 +14,12 @@ class DynamicStack
     T peek (T buffer);
     int getSize ();
     class Node {
-      Node ();
-      ~Node ();
+      public:
+        Node ();
+        ~Node ();
 
-      T* data = nullptr;
-      Node* next = nullptr;
+        T* data = nullptr;
+        Node* next = nullptr;
     };
 
   private:
@@ -57,6 +58,7 @@ void DynamicStack<T>::push (T buffer)
     while (node->next)
       node = node->next;
     node->next = new Node;
+    node = node->next;
     node->data = temp;
   }
   size++;
@@ -71,7 +73,9 @@ inline T DynamicStack<T>::pop (T buffer)
   Node* node = top;
   if (size == 1)
   {
-    *top->data = buffer;
+    buffer = *top->data;
+    delete top->data;
+    top->data = nullptr;
     delete top;
     top = nullptr;
   }
@@ -80,7 +84,7 @@ inline T DynamicStack<T>::pop (T buffer)
     Node* node = top;
     while (node->next->next)
       node = node->next;
-    *node->next->data = buffer;
+    buffer = *node->next->data;
     delete node->next->data;
     node->next->data = nullptr;
     delete node->next;
@@ -91,9 +95,20 @@ inline T DynamicStack<T>::pop (T buffer)
 }
 
 template<typename T>
+T DynamicStack<T>::peek (T buffer)
+{
+
+}
+
+template<typename T>
 int DynamicStack<T>::getSize ()
 {
   return size;
+}
+
+template<typename T>
+inline DynamicStack<T>::Node::Node ()
+{
 }
 
 template<typename T>
