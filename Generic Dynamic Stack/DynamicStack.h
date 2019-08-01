@@ -7,7 +7,7 @@ class DynamicStack
     static const int EMPTY = 0;
 
     DynamicStack ();
-    //~DynamicStack ();
+    ~DynamicStack ();
     bool isEmpty ();
     void push (T buffer);
     T pop (T &buffer);
@@ -32,6 +32,16 @@ inline DynamicStack<T>::DynamicStack ()
 {
   top = nullptr;
   size = 0;
+}
+
+template<typename T>
+inline DynamicStack<T>::~DynamicStack ()
+{
+  while (!isEmpty())
+  {
+    T temp;
+    pop (temp);
+  }
 }
 
 template<typename T>
