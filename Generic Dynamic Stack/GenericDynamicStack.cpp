@@ -5,15 +5,20 @@
 
 int main()
 {
-  char word[6] = "ababa";
   DynamicStack<char> palindromeForwards;
   DynamicStack<char> palindromeBackwards;
-  //std::ifstream palindromes ("palindromes.txt");
-  int wordlength, wordhalf;
+  std::ifstream palindromes ("palindromes.txt");
+  int wordlength = 0;
+  int wordhalf = 0;
   bool isPalindrome = true;
 
-  for (wordlength = 0; word[wordlength] != '\0'; wordlength++)
-    palindromeForwards.push (word[wordlength]);
+  while (palindromes.peek () != '\0')
+  {
+    char temp = palindromes.get ();
+    palindromeForwards.push (temp);
+    std::cout << temp;
+    palindromes.seekg (1, palindromes._Seekcur);
+  }
 
   wordhalf = wordlength / 2;
   for (int i = 0; i < wordhalf; i++)
@@ -39,10 +44,11 @@ int main()
     wordhalf--;
   }
   
-  std::cout << word;
   if (isPalindrome)
     std::cout << " [Palindrome] \n";
   else
     std::cout << " [not a palindrome] \n";
+
+  palindromes.close ();
   return 0;
 }
