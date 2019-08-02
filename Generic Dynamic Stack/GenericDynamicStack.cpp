@@ -14,11 +14,16 @@ int main()
 
   {
     char temp;
-    while (palindromes >> temp)
-    {
+    palindromes >> temp;
+    do {
       palindromeForwards.push (temp);
       wordlength++;
-    }
+      std::cout << temp;
+      palindromes >> temp;
+    } while (palindromes.peek () != '\n');
+    palindromeForwards.push (temp);
+    wordlength++;
+    std::cout << temp;
   }
 
   wordhalf = wordlength / 2;
