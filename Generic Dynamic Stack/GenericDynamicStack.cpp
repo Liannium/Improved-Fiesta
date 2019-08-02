@@ -12,12 +12,13 @@ int main()
   int wordhalf = 0;
   bool isPalindrome = true;
 
-  while (palindromes.peek () != '\0')
   {
-    char temp = palindromes.get ();
-    palindromeForwards.push (temp);
-    std::cout << temp;
-    palindromes.seekg (1, palindromes._Seekcur);
+    char temp;
+    while (palindromes >> temp)
+    {
+      palindromeForwards.push (temp);
+      wordlength++;
+    }
   }
 
   wordhalf = wordlength / 2;
