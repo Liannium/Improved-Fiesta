@@ -33,6 +33,7 @@ int main()
     palindromeBackwards.pop (backward);
     if (forward != backward)
       isPalindrome = false;
+    wordlength--;
   }
   
   std::cout << word;
