@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Static Stack", "Sta
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Dynamic Stack", "Generic Dynamic Stack\Generic Dynamic Stack.vcxproj", "{F995DE6B-47F1-435A-9D75-F9705B8E402B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Dynamic List", "Generic Dynamic List\Generic Dynamic List.vcxproj", "{D7B29323-5ED2-4227-AA67-21A3BA851953}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x64.Build.0 = Release|x64
 		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x86.ActiveCfg = Release|Win32
 		{F995DE6B-47F1-435A-9D75-F9705B8E402B}.Release|x86.Build.0 = Release|Win32
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Debug|x64.ActiveCfg = Debug|x64
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Debug|x64.Build.0 = Debug|x64
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Debug|x86.ActiveCfg = Debug|Win32
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Debug|x86.Build.0 = Debug|Win32
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Release|x64.ActiveCfg = Release|x64
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Release|x64.Build.0 = Release|x64
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Release|x86.ActiveCfg = Release|Win32
+		{D7B29323-5ED2-4227-AA67-21A3BA851953}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
