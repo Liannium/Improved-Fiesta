@@ -2,6 +2,9 @@
 
 int main ()
 {
-  List<int> fiestaList ();
+  List<char> fiesta;
+
+  fiesta.insertAfter ('h');
+  fiesta.insertAfter ('i');
   return 0;
 }
