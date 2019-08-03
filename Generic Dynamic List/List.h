@@ -28,8 +28,13 @@ class List
     };
 
   private:
-    Element* first = nullptr;
-    Element* last = nullptr;
-    Element* current = nullptr;
+    Element* firstElement = nullptr;
+    Element* lastElement = nullptr;
+    Element* currentElement = nullptr;
     int numElements = 0;
 };
+
+template<typename T>
+List<T>::List ()
+{
+}
