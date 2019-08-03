@@ -7,7 +7,6 @@ class List
     List ();
     ~List ();
     int size ();
-    bool isFull ();
     bool isEmpty ();
     //bool hasCurrent ();
     //bool hasNext ();
@@ -35,6 +34,30 @@ class List
 };
 
 template<typename T>
-List<T>::List ()
+inline List<T>::List ()
 {
+}
+
+template<typename T>
+inline int List<T>::size ()
+{
+  return numElements;
+}
+
+template<typename T>
+inline bool List<T>::isEmpty ()
+{
+  return (numElements == 0);
+}
+
+template<typename T>
+inline void List<T>::first ()
+{
+  currentElement == firstElement;
+}
+
+template<typename T>
+inline void List<T>::next ()
+{
+  currentElement == currentElement->next;
 }
