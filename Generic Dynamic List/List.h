@@ -9,17 +9,17 @@ class List
     int size ();
     bool isFull ();
     bool isEmpty ();
-    bool hasCurrent ();
-    bool hasNext ();
-    T peek ();
-    T peekNext ();
+    //bool hasCurrent ();
+    //bool hasNext ();
+    //T peek ();
+    //T peekNext ();
     void first ();
     void next ();
-    void last ();
+    //void last ();
     void insertAfter ();
-    void deleteCurrent ();
-    void insertBefore ();
-    void updateCurrent ();
+    //void deleteCurrent ();
+    //void insertBefore ();
+    //void updateCurrent ();
 
     class Element {
       public:
