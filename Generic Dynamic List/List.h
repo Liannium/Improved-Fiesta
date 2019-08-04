@@ -9,8 +9,8 @@ class List
     int size ();
     bool isEmpty ();
     bool hasCurrent ();
-    //bool hasNext ();
-    //T peek (T &buffer);
+    bool hasNext ();
+    T peek (T &buffer);
     //T peekNext (T &buffer);
     void first ();
     void next ();
@@ -75,18 +75,46 @@ inline bool List<T>::isEmpty ()
 template<typename T>
 inline bool List<T>::hasCurrent ()
 {
+  if (isEmpty())
+    throw "The stack is empty";
+
   return (currentElement);
+}
+
+template<typename T>
+inline bool List<T>::hasNext ()
+{
+  if (isEmpty())
+    throw "The stack is empty";
+
+  return (currentElement->next);
+}
+
+template<typename T>
+inline T List<T>::peek (T& buffer)
+{
+  if (isEmpty())
+    throw "The stack is empty";
+
+  buffer = *currentElement->data;
+  return buffer;
 }
 
 template<typename T>
 inline void List<T>::first ()
 {
+  if (isEmpty())
+    throw "The stack is empty";
+
   currentElement == firstElement;
 }
 
 template<typename T>
 inline void List<T>::next ()
 {
+  if (isEmpty ())
+    throw "The stack is empty";
+
   currentElement == currentElement->next;
 }
 
