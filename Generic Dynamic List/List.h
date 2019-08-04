@@ -8,7 +8,7 @@ class List
     ~List ();
     int size ();
     bool isEmpty ();
-    //bool hasCurrent ();
+    bool hasCurrent ();
     //bool hasNext ();
     //T peek (T &buffer);
     //T peekNext (T &buffer);
@@ -41,20 +41,23 @@ inline List<T>::List ()
 template<typename T>
 inline List<T>::~List ()
 {
-  currentElement = nullptr;
-  while (firstElement->next)
+  if (firstElement && lastElement)
   {
-    Element* temp = firstElement->next;
+    currentElement = nullptr;
+    while (firstElement->next)
+    {
+      Element* temp = firstElement->next;
+      delete firstElement->data;
+      firstElement->data = nullptr;
+      delete firstElement;
+      firstElement = temp;
+    }
+    lastElement = nullptr;
     delete firstElement->data;
     firstElement->data = nullptr;
     delete firstElement;
-    firstElement = temp;
+    firstElement = nullptr;
   }
-  lastElement = nullptr;
-  delete firstElement->data;
-  firstElement->data = nullptr;
-  delete firstElement;
-  firstElement = nullptr;
 }
 
 template<typename T>
@@ -67,6 +70,12 @@ template<typename T>
 inline bool List<T>::isEmpty ()
 {
   return (numElements == 0);
+}
+
+template<typename T>
+inline bool List<T>::hasCurrent ()
+{
+  return (currentElement);
 }
 
 template<typename T>
