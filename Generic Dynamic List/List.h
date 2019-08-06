@@ -11,10 +11,10 @@ class List
     bool hasCurrent ();
     bool hasNext ();
     T peek (T &buffer);
-    //T peekNext (T &buffer);
+    T peekNext (T &buffer);
     void first ();
     void next ();
-    //void last ();
+    void last ();
     void insertAfter (const T &buffer);
     //T deleteCurrent (T &buffer);
     //void insertBefore (const T &buffer);
@@ -76,7 +76,7 @@ template<typename T>
 inline bool List<T>::hasCurrent ()
 {
   if (isEmpty())
-    throw "The stack is empty";
+    throw "The list is empty";
 
   return (currentElement);
 }
@@ -85,7 +85,7 @@ template<typename T>
 inline bool List<T>::hasNext ()
 {
   if (isEmpty())
-    throw "The stack is empty";
+    throw "The list is empty";
 
   return (currentElement->next);
 }
@@ -94,28 +94,57 @@ template<typename T>
 inline T List<T>::peek (T& buffer)
 {
   if (isEmpty())
-    throw "The stack is empty";
+    throw "The list is empty";
+  if (!hasCurrent())
+    throw "The list has no current element";
 
   buffer = *currentElement->data;
   return buffer;
 }
 
 template<typename T>
+inline T List<T>::peekNext (T& buffer)
+{
+  if (isEmpty ())
+    throw "The list is empty";
+  if (!hasCurrent ())
+    throw "The list has no current element";
+  if (!hasNext ())
+    throw "There is no element after the current element";
+  
+  buffer = *currentElement->next->data;
+  return T ();
+}
+
+template<typename T>
 inline void List<T>::first ()
 {
   if (isEmpty())
-    throw "The stack is empty";
+    throw "The list is empty";
 
-  currentElement == firstElement;
+  currentElement = firstElement;
 }
 
 template<typename T>
 inline void List<T>::next ()
 {
   if (isEmpty ())
-    throw "The stack is empty";
+    throw "The list is empty";
+  if (!hasCurrent())
+    throw "The list has no current element";
 
   currentElement == currentElement->next;
+}
+
+template<typename T>
+inline void List<T>::last ()
+{
+  if (isEmpty ())
+    throw "The list is empty";
+  if (!lastElement)
+    throw "The last element has not been set";
+
+  currentElement = lastElement;
 }
 
 template<typename T>
