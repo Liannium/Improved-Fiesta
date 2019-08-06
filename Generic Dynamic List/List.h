@@ -41,22 +41,13 @@ inline List<T>::List ()
 template<typename T>
 inline List<T>::~List ()
 {
-  if (firstElement && lastElement)
+  while (firstElement)
   {
-    currentElement = nullptr;
-    while (firstElement->next)
-    {
-      Element* temp = firstElement->next;
-      delete firstElement->data;
-      firstElement->data = nullptr;
-      delete firstElement;
-      firstElement = temp;
-    }
-    lastElement = nullptr;
+    currentElement = firstElement->next;
     delete firstElement->data;
     firstElement->data = nullptr;
     delete firstElement;
-    firstElement = nullptr;
+    firstElement = currentElement;
   }
 }
 
