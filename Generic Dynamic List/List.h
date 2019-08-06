@@ -18,7 +18,7 @@ class List
     void insertAfter (const T &buffer);
     //T deleteCurrent (T &buffer);
     //void insertBefore (const T &buffer);
-    //void updateCurrent ();
+    void updateCurrent (T buffer);
 
     class Element {
       public:
@@ -168,4 +168,17 @@ inline void List<T>::insertAfter (const T& buffer)
     currentElement->next = temp;
   }
   numElements++;
+}
+
+template<typename T>
+inline void List<T>::updateCurrent (T buffer)
+{
+  if (isEmpty ())
+    throw "The list is empty";
+  if (!hasCurrent ())
+    throw "The list has no current element";
+
+  delete currentElement->data;
+  currentElement->data = new T;
+  *currentElement->data = buffer;
 }

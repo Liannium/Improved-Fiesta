@@ -12,5 +12,7 @@ int main ()
   fiesta.first ();
   fiesta.peekNext (peekNextTest);
   fiesta.last ();
+  fiesta.updateCurrent ('e');
+
   return 0;
 }
