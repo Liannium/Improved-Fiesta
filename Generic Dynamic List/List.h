@@ -124,7 +124,7 @@ inline void List<T>::next ()
   if (!hasCurrent())
     throw "The list has no current element";
 
-  currentElement == currentElement->next;
+  currentElement = currentElement->next;
 }
 
 template<typename T>
@@ -175,18 +175,29 @@ inline T List<T>::deleteCurrent (T& buffer)
 {
   if (isEmpty ())
     throw "The list is empty";
-  if (!hasCurrent)
+  if (!hasCurrent ())
     throw "The list has no current element";
 
-  T* temp = firstElement;
-  while (temp->next != currentElement)
-    temp = temp->next;
-  buffer = *currentElement->data;
-  temp->next = currentElement->next;
-  delete currentElement->data;
-  currentElement->data = nullptr;
-  delete currentElement;
-  currentElement = temp;
+  if (currentElement == firstElement)
+  {
+    buffer = *firstElement->data;
+    currentElement = firstElement->next;
+    delete firstElement->data;
+    firstElement->data = nullptr;
+    delete firstElement;
+    firstElement = currentElement;
+  }
+  else {
+    Element* temp = firstElement;
+    while (temp->next != currentElement)
+      temp = temp->next;
+    buffer = *currentElement->data;
+    temp->next = currentElement->next;
+    delete currentElement->data;
+    currentElement->data = nullptr;
+    delete currentElement;
+    currentElement = temp;
+  }
   return buffer;
 }
 
