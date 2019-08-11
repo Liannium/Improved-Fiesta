@@ -17,7 +17,7 @@ class List
     void last ();
     void insertAfter (const T &buffer);
     T deleteCurrent (T &buffer);
-    //void insertBefore (const T &buffer);
+    void insertBefore (const T &buffer);
     void updateCurrent (T buffer);
 
     class Element {
@@ -141,6 +141,9 @@ inline void List<T>::last ()
 template<typename T>
 inline void List<T>::insertAfter (const T& buffer)
 {
+  if (!hasCurrent ())
+    throw "The list has no current element";
+
   if (isEmpty ())
   {
     Element* temp = new Element;
@@ -199,6 +202,35 @@ inline T List<T>::deleteCurrent (T& buffer)
     currentElement = temp;
   }
   return buffer;
+}
+
+template<typename T>
+inline void List<T>::insertBefore (const T& buffer)
+{
+  if (!hasCurrent ())
+    throw "The list has no current element";
+
+  if (!firstElement)
+    insertAfter (buffer);
+  else if (currentElement == firstElement)
+  {
+    Element* temp = new Element;
+    *temp->data = buffer;
+    temp->next = firstElement;
+    firstElement = temp;
+    currentElement = temp;
+  }
+  else 
+  {
+    Element* temp = firstElement;
+    while (temp->next != currentElement)
+      temp = temp->next;
+    Element* element = new Element;
+    element->next = temp->next;
+    temp->next = element;
+    element->data = new T;
+    *element->data = buffer;
+  }
 }
 
 template<typename T>

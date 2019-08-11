@@ -22,5 +22,6 @@ int main ()
     fiesta.next ();
   }
   fiesta.deleteCurrent (deleteTest);
+  fiesta.insertBefore ('o');
   return 0;
 }
