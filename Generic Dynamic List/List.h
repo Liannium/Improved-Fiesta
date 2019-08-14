@@ -69,7 +69,7 @@ inline bool List<T>::hasCurrent ()
   if (isEmpty())
     throw "The list is empty";
 
-  return (currentElement);
+  return (currentElement != nullptr);
 }
 
 template<typename T>
@@ -78,7 +78,7 @@ inline bool List<T>::hasNext ()
   if (isEmpty())
     throw "The list is empty";
 
-  return (currentElement->next);
+  return (currentElement->next != nullptr);
 }
 
 template<typename T>
@@ -141,7 +141,7 @@ inline void List<T>::last ()
 template<typename T>
 inline void List<T>::insertAfter (const T& buffer)
 {
-  if (!hasCurrent ())
+  if (!isEmpty () && !hasCurrent ())
     throw "The list has no current element";
 
   if (isEmpty ())
@@ -153,6 +153,7 @@ inline void List<T>::insertAfter (const T& buffer)
     lastElement = temp;
     currentElement = temp;
   }
+
   else if (lastElement == currentElement)
   {
     currentElement->next = new Element;
@@ -201,16 +202,17 @@ inline T List<T>::deleteCurrent (T& buffer)
     delete currentElement;
     currentElement = temp;
   }
+  numElements--;
   return buffer;
 }
 
 template<typename T>
 inline void List<T>::insertBefore (const T& buffer)
 {
-  if (!hasCurrent ())
+  if (!isEmpty () && !hasCurrent ())
     throw "The list has no current element";
 
-  if (!firstElement)
+  if (isEmpty())
     insertAfter (buffer);
   else if (currentElement == firstElement)
   {
@@ -219,17 +221,19 @@ inline void List<T>::insertBefore (const T& buffer)
     temp->next = firstElement;
     firstElement = temp;
     currentElement = temp;
+    numElements++
   }
   else 
   {
-    Element* temp = firstElement;
-    while (temp->next != currentElement)
-      temp = temp->next;
+    Element* previous = firstElement;
+    while (previous->next != currentElement)
+      previous = previous->next;
     Element* element = new Element;
-    element->next = temp->next;
-    temp->next = element;
+    element->next = currentElement;
+    previous->next = element;
     element->data = new T;
     *element->data = buffer;
+    numElements++
   }
 }
 
