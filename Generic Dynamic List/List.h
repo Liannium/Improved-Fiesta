@@ -221,7 +221,7 @@ inline void List<T>::insertBefore (const T& buffer)
     temp->next = firstElement;
     firstElement = temp;
     currentElement = temp;
-    numElements++
+    numElements++;
   }
   else 
   {
@@ -233,7 +233,7 @@ inline void List<T>::insertBefore (const T& buffer)
     previous->next = element;
     element->data = new T;
     *element->data = buffer;
-    numElements++
+    numElements++;
   }
 }
 
