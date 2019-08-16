@@ -30,6 +30,13 @@ inline Queue<T>::Queue ()
 }
 
 template<typename T>
+inline Queue<T>::~Queue ()
+{
+  theList.first ();
+  QueueElement temp;
+}
+
+template<typename T>
 inline int Queue<T>::size ()
 {
   return theList.size();
@@ -55,7 +62,7 @@ inline void Queue<T>::enqueue (const T& buffer, int priority)
     while (priority >= current.priority) 
     {
       theList.next ();
-      current = list.peek;
+      current = list.peek();
     }
   }
   theList.insertBefore (element);
@@ -66,8 +73,8 @@ inline T Queue<T>::dequeue (T& buffer, int& priority)
 {
   QueueElement freed;
   theList.first ();
-  theList.pop (freed);
-  buffer = freed.buffer;
+  theList.deleteCurrent (freed);
+  buffer = freed.data;
   priority = freed.priority;
   return buffer;
 }
