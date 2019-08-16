@@ -51,7 +51,7 @@ inline bool Queue<T>::isEmpty ()
 template<typename T>
 inline void Queue<T>::enqueue (const T& buffer, int priority)
 {
-  QueueElement* element = new queueElement;
+  QueueElement* element = new QueueElement;
   *element->priority = priority;
   element->data = new T;
   *element->data = buffer;
