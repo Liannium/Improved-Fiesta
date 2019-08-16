@@ -14,13 +14,13 @@ class Queue
     T peek (T& buffer, int& priority);
     void changePriority (int& change);
 
-    class queueElement
+    class QueueElement
     {
       int priority;
       T* data;
     };
   private:
-    List<queueElement> theList;
+    List<QueueElement> theList;
 };
 
 template<typename T>
@@ -44,20 +44,30 @@ inline bool Queue<T>::isEmpty ()
 template<typename T>
 inline void Queue<T>::enqueue (const T& buffer, int priority)
 {
-  queueElement* element = new queueElement;
+  QueueElement* element = new queueElement;
   *element->priority = priority;
   element->data = new T;
   *element->data = buffer;
-  if (theList.isEmpty ())
-    theList.insertAfter (element);
-  else {
+  if (!isEmpty ())
+  {
     theList.first ();
-    queueElement current = theList.peek ();
+    QueueElement current = theList.peek ();
     while (priority >= current.priority) 
     {
       theList.next ();
       current = list.peek;
     }
-    theList.insertBefore (element);
   }
+  theList.insertBefore (element);
+}
+
+template<typename T>
+inline T Queue<T>::dequeue (T& buffer, int& priority)
+{
+  QueueElement freed;
+  theList.first ();
+  theList.pop (freed);
+  buffer = freed.buffer;
+  priority = freed.priority;
+  return buffer;
 }

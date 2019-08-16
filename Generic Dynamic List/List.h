@@ -153,15 +153,6 @@ inline void List<T>::insertAfter (const T& buffer)
     lastElement = temp;
     currentElement = temp;
   }
-
-  else if (lastElement == currentElement)
-  {
-    currentElement->next = new Element;
-    currentElement = currentElement->next;
-    currentElement->data = new T;
-    *currentElement->data = buffer;
-    lastElement = currentElement;
-  }
   else
   {
     Element* temp = currentElement->next;
@@ -170,6 +161,8 @@ inline void List<T>::insertAfter (const T& buffer)
     currentElement->data = new T;
     *currentElement->data = buffer;
     currentElement->next = temp;
+    if (currentElement->next == nullptr)
+      lastElement = currentElement;
   }
   numElements++;
 }
