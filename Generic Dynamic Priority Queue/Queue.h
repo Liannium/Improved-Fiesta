@@ -58,6 +58,6 @@ inline void Queue<T>::enqueue (const T& buffer, int priority)
       theList.next ();
       current = list.peek;
     }
-    theList.insertAfter (element);
+    theList.insertBefore (element);
   }
 }
