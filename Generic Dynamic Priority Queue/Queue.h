@@ -74,7 +74,8 @@ inline T Queue<T>::dequeue (T& buffer, int& priority)
   QueueElement freed;
   theList.first ();
   theList.deleteCurrent (freed);
-  buffer = freed.data;
+  buffer = *freed.data;
   priority = freed.priority;
+  delete freed.data;
   return buffer;
 }
