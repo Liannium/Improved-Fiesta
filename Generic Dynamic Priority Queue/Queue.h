@@ -32,8 +32,18 @@ inline Queue<T>::Queue ()
 template<typename T>
 inline Queue<T>::~Queue ()
 {
-  theList.first ();
-  QueueElement temp;
+  if (!isEmpty ())
+  {
+    theList.first ();
+    QueueElement temp;
+    theList.peek (temp);
+    while (temp->next != nullptr)
+    {
+      delete temp.data;
+      temp = theList.peek ();
+    }
+    delete temp.data;
+  }
 }
 
 template<typename T>
