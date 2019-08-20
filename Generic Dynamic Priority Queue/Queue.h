@@ -16,8 +16,9 @@ class Queue
 
     class QueueElement
     {
-      int priority;
-      T* data;
+      public:
+        int priority;
+        T* data;
     };
   private:
     List<QueueElement> theList;
@@ -34,8 +35,9 @@ inline Queue<T>::~Queue ()
 {
   while (!isEmpty ())
   {
-    QueueElement temp;
-    dequeue (temp);
+    T temp;
+    int priority;
+    dequeue (temp, priority);
   }
 }
 
@@ -55,20 +57,21 @@ template<typename T>
 inline void Queue<T>::enqueue (const T& buffer, int priority)
 {
   QueueElement* element = new QueueElement;
-  *element->priority = priority;
+  element->priority = priority;
   element->data = new T;
   *element->data = buffer;
   if (!isEmpty ())
   {
     theList.first ();
-    QueueElement current = theList.peek ();
+    QueueElement current;
+    theList.peek (current);
     while (priority >= current.priority) 
     {
       theList.next ();
-      current = theList.peek();
+      theList.peek (current);
     }
   }
-  theList.insertBefore (element);
+  theList.insertBefore (*element);
 }
 
 template<typename T>
@@ -81,4 +84,13 @@ inline T Queue<T>::dequeue (T& buffer, int& priority)
   priority = freed.priority;
   delete freed.data;
   return buffer;
+}
+
+template<typename T>
+inline T Queue<T>::peek (T& buffer, int& priority)
+{
+  QueueElement temp;
+  theList.peek (temp);
+  buffer = *temp.data;
+  priority = temp.priority;
 }
