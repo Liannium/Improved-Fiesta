@@ -60,18 +60,24 @@ inline void Queue<T>::enqueue (const T& buffer, int priority)
   element.priority = priority;
   element.data = new T;
   *element.data = buffer;
+  bool after = false;
   if (!isEmpty ())
   {
     theList.first ();
     QueueElement current;
     theList.peek (current);
-    while (priority >= current.priority) 
+    while (priority >= current.priority && theList.hasNext()) 
     {
       theList.next ();
       theList.peek (current);
     }
+    if (priority >= current.priority)
+      after = true;
   }
-  theList.insertBefore (element);
+  if (after)
+    theList.insertAfter (element);
+  else
+    theList.insertBefore (element);
 }
 
 template<typename T>

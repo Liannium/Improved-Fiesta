@@ -212,6 +212,7 @@ inline void List<T>::insertBefore (const T& buffer)
   else if (currentElement == firstElement)
   {
     Element* temp = new Element;
+    temp->data = new T;
     *temp->data = buffer;
     temp->next = firstElement;
     firstElement = temp;
