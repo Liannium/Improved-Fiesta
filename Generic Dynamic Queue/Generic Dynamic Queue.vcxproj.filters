@@ -16,12 +16,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Generic Dynamic Queue.cpp" />
-    <ClCompile Include="StaticQueue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StaticQueue.h">
+    <ClInclude Include="RegularQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

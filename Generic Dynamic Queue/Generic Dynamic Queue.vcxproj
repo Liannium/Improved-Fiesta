@@ -126,10 +126,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Generic Dynamic Queue.cpp" />
-    <ClCompile Include="StaticQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StaticQueue.h" />
+    <ClInclude Include="RegularQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
