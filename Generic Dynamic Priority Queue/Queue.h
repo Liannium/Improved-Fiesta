@@ -12,7 +12,7 @@ class Queue
     void enqueue (const T &buffer, int priority);
     T dequeue (T& buffer, int& priority);
     T peek (T& buffer, int& priority);
-    void changePriority (int& change);
+    void changePriority (const int& change);
 
     class QueueElement
     {
@@ -99,4 +99,17 @@ inline T Queue<T>::peek (T& buffer, int& priority)
   theList.peek (temp);
   buffer = *temp.data;
   priority = temp.priority;
+}
+
+template<typename T>
+inline void Queue<T>::changePriority (const int& change)
+{
+  theList.first ();
+  while (theList.hasNext ())
+  {
+    QueueElement current;
+    theList.peek (current);
+    current.priority += change;
+    theList.updateCurrent (current);
+  }
 }
