@@ -111,5 +111,6 @@ inline void Queue<T>::changePriority (const int& change)
     theList.peek (current);
     current.priority += change;
     theList.updateCurrent (current);
+    theList.next ();
   }
 }
