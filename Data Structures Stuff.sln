@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Dynamic List", "Gen
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generic Dynamic Priority Queue", "Generic Dynamic Priority Queue\Generic Dynamic Priority Queue.vcxproj", "{1FB84C84-7515-4557-B3D6-61DAE998CD11}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Airport Simulator", "Airport Simulator\Airport Simulator.vcxproj", "{C3BD83E2-23BF-48BC-9DD9-2284204502DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{1FB84C84-7515-4557-B3D6-61DAE998CD11}.Release|x64.Build.0 = Release|x64
 		{1FB84C84-7515-4557-B3D6-61DAE998CD11}.Release|x86.ActiveCfg = Release|Win32
 		{1FB84C84-7515-4557-B3D6-61DAE998CD11}.Release|x86.Build.0 = Release|Win32
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Debug|x64.ActiveCfg = Debug|x64
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Debug|x64.Build.0 = Debug|x64
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Debug|x86.ActiveCfg = Debug|Win32
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Debug|x86.Build.0 = Debug|Win32
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Release|x64.ActiveCfg = Release|x64
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Release|x64.Build.0 = Release|x64
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Release|x86.ActiveCfg = Release|Win32
+		{C3BD83E2-23BF-48BC-9DD9-2284204502DE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
