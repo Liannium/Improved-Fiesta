@@ -36,8 +36,8 @@ inline Queue<T>::~Queue ()
   while (!isEmpty ())
   {
     T temp;
-    int priority;
-    dequeue (temp, priority);
+    int freedPriority;
+    dequeue (temp, freedPriority);
   }
 }
 
