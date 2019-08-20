@@ -1,10 +1,12 @@
 #include "Queue.h"
+#include <string>
 int main ()
 {
-  int pushtest = 5;
-  int pushtestLower = 10;
-  int pushtestHigher = 1;
-  Queue<int> improvedFiesta;
-  improvedFiesta.enqueue (pushtest, pushtest);
+  std::string one ("one");
+  std::string two ("two");
+  std::string six ("six");
+  Queue<std::string> improvedFiesta;
+  improvedFiesta.enqueue (one, 1);
+  improvedFiesta.enqueue (two, 2);
   return 0;
 }

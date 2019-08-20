@@ -56,10 +56,10 @@ inline bool Queue<T>::isEmpty ()
 template<typename T>
 inline void Queue<T>::enqueue (const T& buffer, int priority)
 {
-  QueueElement* element = new QueueElement;
-  element->priority = priority;
-  element->data = new T;
-  *element->data = buffer;
+  QueueElement element;
+  element.priority = priority;
+  element.data = new T;
+  *element.data = buffer;
   if (!isEmpty ())
   {
     theList.first ();
@@ -71,7 +71,7 @@ inline void Queue<T>::enqueue (const T& buffer, int priority)
       theList.peek (current);
     }
   }
-  theList.insertBefore (*element);
+  theList.insertBefore (element);
 }
 
 template<typename T>

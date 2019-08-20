@@ -123,6 +123,8 @@ inline void List<T>::next ()
     throw "The list is empty";
   if (!hasCurrent())
     throw "The list has no current element";
+  if (!hasNext ())
+    throw "The list has no next element";
 
   currentElement = currentElement->next;
 }
