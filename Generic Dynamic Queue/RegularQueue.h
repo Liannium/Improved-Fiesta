@@ -12,6 +12,13 @@ class RegularQueue
     void rqEnqueue (const T& buffer);
     T rqDequeue (T& buffer);
     T rqPeek (T& buffer);
+
+  class QueueElement
+  {
+    public:
+     int priority;
+     T* data;
+  };
   private:
     Queue<QueueElement> theQueue;
 };
