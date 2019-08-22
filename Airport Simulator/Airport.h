@@ -12,6 +12,7 @@ class Airport
     void addPlane (Plane plane);
     int getTime ();
     void takeTurn ();
+    void landNextPlane ();
 
     static const int NUM_RUNWAYS = 3;
     static const int MAX_NEW_PLANES_LANDING = 3;
@@ -23,4 +24,7 @@ class Airport
     List <int> departingWait;
     RunwayState runways[NUM_RUNWAYS];
     int time = 1;
+    int emergencyLandings = 0;
+    int safeLandings = 0;
+    int crashes = 0;
 };

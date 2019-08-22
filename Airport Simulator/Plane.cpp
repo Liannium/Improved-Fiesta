@@ -9,9 +9,9 @@ Plane::Plane (const int& fuel)
 {
   fuelRemaining = fuel;
   if (fuel == 0)
-    goal = landing;
-  else
     goal = departing;
+  else
+    goal = landing;
 }
 
 int Plane::getFuel ()

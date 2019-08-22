@@ -28,3 +28,15 @@ int Airport::getTime ()
 {
   return time;
 }
+
+void Airport::landNextPlane ()
+{
+  Plane landed;
+  int fuel;
+  int wait;
+  landing.dequeue (landed, fuel);
+  fuel = landed.getFuel ();
+  wait = landed.getWait ();
+  landingWait.insertAfter (wait);
+  landingFuel.insertAfter (fuel);
+}
