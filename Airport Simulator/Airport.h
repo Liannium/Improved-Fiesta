@@ -9,7 +9,7 @@ class Airport
   public:
     Airport ();
     ~Airport ();
-    void addPlane (Plane plane);
+    void addPlane (Plane& plane);
     int getTime ();
     int takeTurn ();
 

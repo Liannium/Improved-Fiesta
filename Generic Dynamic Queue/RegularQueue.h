@@ -9,7 +9,7 @@ class RegularQueue
     ~RegularQueue ();
     int rqSize ();
     bool rqIsEmpty ();
-    void rqEnqueue (const T& buffer);
+    void rqEnqueue (T buffer);
     T rqDequeue (T& buffer);
     T rqPeek (T& buffer);
   class QueueElement
@@ -45,7 +45,7 @@ inline bool RegularQueue<T>::rqIsEmpty ()
 }
 
 template<typename T>
-inline void RegularQueue<T>::rqEnqueue (const T& buffer)
+inline void RegularQueue<T>::rqEnqueue (T buffer)
 {
   theQueue.enqueue (buffer, 0);
 }

@@ -1,8 +1,13 @@
 #include <iostream>
+#include "Airport.h"
+#include "Plane.h"
 void printHeader ();
 
 int main ()
 {
+  Airport airport ();
+  Plane test (1);
+  
   printHeader ();
   return 0;
 }

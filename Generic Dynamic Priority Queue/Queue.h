@@ -9,7 +9,7 @@ class Queue
     ~Queue ();
     int size ();
     bool isEmpty ();
-    void enqueue (const T &buffer, int priority);
+    void enqueue (T buffer, int priority);
     T dequeue (T& buffer, int& priority);
     T peek (T& buffer, int& priority);
     void changePriority (const int& change);
@@ -54,7 +54,7 @@ inline bool Queue<T>::isEmpty ()
 }
 
 template<typename T>
-inline void Queue<T>::enqueue (const T& buffer, int priority)
+inline void Queue<T>::enqueue (T buffer, int priority)
 {
   QueueElement element;
   element.priority = priority;
