@@ -23,3 +23,8 @@ void Airport::addPlane (Plane plane)
     landing.enqueue (plane, fuel);
   }
 }
+
+int Airport::getTime ()
+{
+  return time;
+}
