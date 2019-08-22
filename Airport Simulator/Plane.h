@@ -2,7 +2,7 @@
 
 enum Goal {departing, landing}; //taking off was two words so I had to use departing instead >.>
 //in C this is going to be const int landing = 0; const int departing = 1;
-enum Status {waiting, landedSafe, landedEmergency, crashed, departed};
+enum Status {waiting, landedSafe, landedEmergency, crashed, left};
 class Plane
 {
   public:
@@ -10,7 +10,7 @@ class Plane
     Plane (const int& fuel);
     int getFuel ();
     int getWait ();
-    int processTurn ();
+    void processTurn ();
     Status getStatus ();
     Goal getGoal ();
 

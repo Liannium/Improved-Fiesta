@@ -24,7 +24,7 @@ int Plane::getWait ()
   return timeWaiting;
 }
 
-int Plane::processTurn ()
+void Plane::processTurn ()
 {
   if (goal == landing)
     fuelRemaining--;

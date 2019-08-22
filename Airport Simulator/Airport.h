@@ -3,7 +3,7 @@
 #include "Plane.h"
 #pragma once
 
-enum RunwayState {empty, departure, landing, unused};
+enum RunwayState {empty, departed, landed, unused};
 class Airport
 {
   public:
