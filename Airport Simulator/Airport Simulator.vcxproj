@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic Queue;D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic Priority Queue;D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic List;$(IncludePath)</IncludePath>
+    <IncludePath>D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic List;D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic Queue;D:\My Stuff\Code\Data Structures Stuff\Generic Dynamic Priority Queue;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,9 +126,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Airport Simulator.cpp" />
+    <ClCompile Include="Airport.cpp" />
     <ClCompile Include="Plane.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Airport.h" />
     <ClInclude Include="Plane.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

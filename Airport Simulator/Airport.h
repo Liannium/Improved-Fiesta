@@ -1,0 +1,26 @@
+#include "Queue.h"
+#include "RegularQueue.h"
+#include "Plane.h"
+#pragma once
+
+enum RunwayState {empty, departure, landing, unused};
+class Airport
+{
+  public:
+    Airport ();
+    ~Airport ();
+    void addPlane (Plane plane);
+    int getTime ();
+    int takeTurn ();
+
+    static const int NUM_RUNWAYS = 3;
+    static const int MAX_NEW_PLANES_LANDING = 3;
+  private:
+    Queue<Plane> landing;
+    RegularQueue<Plane> departing;
+    List <int> landingWait;
+    List <int> landingFuel;
+    List <int> departingWait;
+    RunwayState runways[NUM_RUNWAYS];
+    int time = 0;
+};

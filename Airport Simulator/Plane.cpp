@@ -27,11 +27,7 @@ int Plane::getWait ()
 int Plane::processTurn ()
 {
   if (goal == landing)
-  {
     fuelRemaining--;
-    if (fuelRemaining == -1)
-      status = crashed;
-  }
   timeWaiting++;
 }
 
