@@ -3,7 +3,7 @@
 #include "Plane.h"
 #pragma once
 
-enum RunwayState {empty, departed, landed, unused};
+enum RunwayState {empty, departed, landed, emergency};
 class Airport
 {
   public:
@@ -13,6 +13,9 @@ class Airport
     int getTime ();
     void takeTurn ();
     void landNextPlane ();
+    bool isEmpty ();
+    int getRunwaysLeft ();
+    RunwayState getRunwayState (int runway);
 
     static const int NUM_RUNWAYS = 3;
     static const int MAX_NEW_PLANES_LANDING = 3;
@@ -27,4 +30,5 @@ class Airport
     int emergencyLandings = 0;
     int safeLandings = 0;
     int crashes = 0;
+    int runwaysLeft = NUM_RUNWAYS;
 };

@@ -3,7 +3,6 @@
 #include "Airport.h"
 #include "Plane.h"
 void printHeader ();
-void printValue (int maxChars, int value);
 
 int main ()
 {
@@ -11,6 +10,7 @@ int main ()
 
   std::ifstream file;
   Airport airport;
+  bool emptyAirport = false;
 
   file.open (FILENAME);
   if (!file)
@@ -26,6 +26,13 @@ int main ()
 
     file >> newPlanesDeparting;
     file >> newPlanesLanding;
+
+    std::cout.width (4);
+    std::cout << time << " | ";
+    std::cout.width (7);
+    std::cout << newPlanesDeparting << "  ";
+    std::cout.width (7);
+    std::cout << newPlanesLanding << " | ";
     
     for (int i = 0; i < newPlanesDeparting; i++)
     {
@@ -38,9 +45,19 @@ int main ()
       file >> fuel;
       Plane planeLanding (fuel);
       airport.addPlane (planeLanding);
+      std::cout.width (4);
+      std::cout << fuel << " ";
     }
-    for (int i = 0; i < Airport::NUM_RUNWAYS; i++)
+    for (int i = 0; i < newPlanesLanding && i < Airport::NUM_RUNWAYS; i++)
     {
+      airport.landNextPlane ();
+    }
+    while (airport.getRunwaysLeft () != 0)
+    {
+      for (int i = airport.getRunwaysLeft (); i > 0; i--)
+      {
+
+      }
     }
   }
   return 0;
@@ -49,12 +66,7 @@ int main ()
 void printHeader ()
 {
   std::cout << "12345678901234567890123456789012345678901234567890123456789012345678901234567890\n";
-  std::cout << "     |          Planes Added            |     Runways      |   Queue  Lengths  \n";
-  std::cout << "Time | Takeoff Landing (Fuel Remaining) | 1   2   3  Crash | Takeoff  Landing \n";
-  std::cout << "---- | -------------------------------- | ---------------- | -------  -------\n";
-}
-
-void printValue (int maxChars, int value)
-{
-  
+  std::cout << "     |           Planes Added            |      Runways      |   Queue  Lengths  \n";
+  std::cout << "Time | Takeoff  Landing (Fuel Remaining) |  1   2   3  Crash | Takeoff  Landing \n";
+  std::cout << "---- | -------  ------------------------ | --- --- --- ----- | -------  -------\n";
 }
