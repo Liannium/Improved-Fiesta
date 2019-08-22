@@ -12,14 +12,8 @@ class RegularQueue
     void rqEnqueue (T buffer);
     T rqDequeue (T& buffer);
     T rqPeek (T& buffer);
-  class QueueElement
-  {
-    public:
-     int priority;
-     T* data;
-  };
   private:
-    Queue<QueueElement> theQueue;
+    Queue<T> theQueue;
 };
 
 template<typename T>

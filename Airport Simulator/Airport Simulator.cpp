@@ -5,9 +5,9 @@ void printHeader ();
 
 int main ()
 {
-  Airport airport ();
+  Airport airport;
   Plane test (1);
-  
+  airport.addPlane (test);
   printHeader ();
   return 0;
 }

@@ -12,7 +12,7 @@ Airport::~Airport ()
 {
 }
 
-void Airport::addPlane (Plane& plane)
+void Airport::addPlane (Plane plane)
 {
   Goal goal = plane.getGoal ();
   if (goal == Goal::departing)
