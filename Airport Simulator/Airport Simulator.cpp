@@ -48,18 +48,7 @@ int main ()
       std::cout.width (4);
       std::cout << fuel << " ";
     }
-    for (int i = 0; i < newPlanesLanding && i < Airport::NUM_RUNWAYS; i++)
-    {
-      airport.landNextPlane ();
-    }
-    while (airport.getRunwaysLeft () != 0)
-    {
-      for (int i = airport.getRunwaysLeft (); i > 0; i--)
-      {
-
-      }
-    }
-  }
+    
   return 0;
 }
 
