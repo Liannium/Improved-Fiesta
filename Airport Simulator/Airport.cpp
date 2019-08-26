@@ -29,7 +29,7 @@ int Airport::getTime ()
   return time;
 }
 
-void Airport::takeTurn ()
+void Airport::timePasses ()
 {
   landing.first();
   for (int i = 0; i < landing.size(); i++)
