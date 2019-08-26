@@ -71,6 +71,18 @@ void Airport::landNextPlane ()
   runwaysLeft--;
 }
 
+void Airport::departNextPlane ()
+{
+  Plane departed;
+  int wait;
+  int runwayUsed = NUM_RUNWAYS - runwaysLeft;
+  departing.dequeue(departed);
+  wait = departing.getWait ();
+  departingWait.insertAfter (wait);
+  runways[runwayUsed] = RunwayState::departed;
+  runwaysLeft--;
+}
+
 bool Airport::isEmpty ()
 {
   return (landing.isEmpty() && departing.rqIsEmpty());
