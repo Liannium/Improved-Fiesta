@@ -29,6 +29,30 @@ int Airport::getTime ()
   return time;
 }
 
+void Airport::takeTurn ()
+{
+  landing.first();
+  for (int i = 0; i < landing.size(); i++)
+  {
+    Plane temp;
+    int priorityDump;
+    landing.peek (temp, priorityDump);
+    temp.processTurn();
+    landing.updateCurrent(temp);
+    landing.next();
+  }
+  departing.first();
+  for (int i = 0; i < departing.size(); i++)
+  {
+    Plane temp;
+    int priorityDump;
+    departing.peek(temp, priorityDump);
+    temp.processTurn();
+    departing.updateCurrent(temp);
+    departing.next();
+  }
+}
+
 void Airport::landNextPlane ()
 {
   Plane landed;
