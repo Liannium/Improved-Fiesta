@@ -11,7 +11,7 @@ class Airport
     ~Airport ();
     void addPlane (Plane plane);
     int getTime ();
-    void takeTurn ();
+    void timePasses ();
     void landNextPlane ();
     void departNextPlane ();
     bool isEmpty ();
