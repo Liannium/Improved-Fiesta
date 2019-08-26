@@ -96,16 +96,23 @@ int Airport::getRunwaysLeft ()
 void Airport::turn ();
 {
   landing.first();
+  deparing.first();
   {
     Plane fuelCheck;
     int priorityDump;
     landing.peek (fuelCheck, priorityDump);
-    if (fuelCheck == 0)
-    {
+    while (fuelCheck == 0 && getRunwaysLeft () != 0)
       landNextPlane ();
-    }
   }
-  
+  while (getRunwaysLeft () != 0 && (landing.getSize () != 0 || departing.getSize () != 0))
+  {
+    if (landing.getSize () >= departing.getSize ())
+      landNextPlane ();
+    else 
+      departNextPlane ();
+  }
+  time++:
+}  
 
 RunwayState Airport::getRunwayState (int runway)
 {
