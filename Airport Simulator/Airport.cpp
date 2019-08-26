@@ -93,6 +93,20 @@ int Airport::getRunwaysLeft ()
   return runwaysLeft;
 }
 
+void Airport::turn ();
+{
+  landing.first();
+  {
+    Plane fuelCheck;
+    int priorityDump;
+    landing.peek (fuelCheck, priorityDump);
+    if (fuelCheck == 0)
+    {
+      landNextPlane ();
+    }
+  }
+  
+
 RunwayState Airport::getRunwayState (int runway)
 {
   return runways[runway];
