@@ -16,6 +16,7 @@ class Airport
     void departNextPlane ();
     bool isEmpty ();
     int getRunwaysLeft ();
+    void turn ();
     RunwayState getRunwayState (int runway);
 
     static const int NUM_RUNWAYS = 3;
