@@ -13,6 +13,7 @@ class Airport
     int getTime ();
     void takeTurn ();
     void landNextPlane ();
+    void departNextPlane ();
     bool isEmpty ();
     int getRunwaysLeft ();
     RunwayState getRunwayState (int runway);
